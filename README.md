@@ -120,6 +120,23 @@ replicaset.apps/awx-operator-controller-manager-68d787cfbd   1         1        
 
 ### Prepare required files to deploy AWX
 
+Clone this repository and change directory.
+
+```bash
+cd ~/Files
+git clone https://github.com/BrianInAz/awx-on-k3s.git
+cd awx-on-k3s
+```
+Apply custom certificate from Bjzy Labs CA...
+
+```
+cp ~/Files/awxonk3s.crt ./base/tls.crt
+cp ~/Files/awxonk3s.key ./base/tls.key
+```
+
+or
+
+
 Generate a Self-Signed certificate. Note that IP address can't be specified. If you want to use a certificate from public ACME CA such as Let's Encrypt or ZeroSSL instead of Self-Signed certificate, follow the guide on [📁 **Use SSL Certificate from Public ACME CA**](acme) first and come back to this step when done.
 
 ```bash
